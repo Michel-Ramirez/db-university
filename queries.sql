@@ -19,7 +19,7 @@ ORDER BY `cfu` ASC;
 
 SELECT *
 FROM `students`
-WHERE `date_of_birth` > '1993-01-01';
+WHERE `date_of_birth` < '1993-01-01';
 
 
 -- 4. Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di
