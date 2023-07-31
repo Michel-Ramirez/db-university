@@ -65,7 +65,18 @@ ON CT.`teacher_id` = T.`id`;
 
 --6. Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
 
-
+SELECT DISTINCT T.`surname`, T.`name` , DEP.`name` 
+FROM `teachers` AS T
+JOIN `course_teacher` AS CT 
+ON T.`id` = CT.`teacher_id`
+JOIN `courses` AS C 
+ON CT.`course_id` = C.`id`
+JOIN `degrees` AS DEG 
+ON C.`degree_id` = DEG.`id`
+JOIN `departments` AS DEP 
+ON DEG.`department_id` = DEP.`id`
+WHERE DEP.`name` = 'Dipartimento di Matematica'
+ORDER BY T.`surname` ASC;
 
 
 
