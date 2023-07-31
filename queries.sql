@@ -1,3 +1,5 @@
+
+
 -- 1. Selezionare tutti gli studenti nati nel 1990 (160)
 
 SELECT *
@@ -19,7 +21,7 @@ ORDER BY `cfu` ASC;
 
 SELECT *
 FROM `students`
-WHERE `date_of_birth` < '1993-01-01';
+WHERE `date_of_birth` <= DATE_SUB(CURDATE(), INTERVAL 30 YEAR);
 
 
 -- 4. Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di
@@ -58,7 +60,7 @@ FROM `departments`;
 
 -- 8. Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
 
-SELECT * 
+SELECT COUNT(*) AS `num_insegnati` 
 FROM `teachers`
 WHERE `phone` IS NOT NULL;
 
